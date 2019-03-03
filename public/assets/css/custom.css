@@ -1,0 +1,51 @@
+.cart_quantity_delete{
+    background: #d9534f;width:4em;
+    margin-right:.5em;
+    color:white
+}
+
+.cart_quantity_down{
+    padding-bottom: 5px;
+}
+
+span.cart-counter{
+    /* background:#FE980F; */
+    /* background:#29a628;; */
+    background:#39b3d7;
+    position: absolute;
+    top: -10PX;
+
+}
+
+.checkout-options{
+    margin-bottom: 20px;
+}
+
+.save-for-later a{
+    color: #696763;
+}
+
+section#form{
+    margin-top: 40px;
+}
+
+.img-resize{
+    max-width: 40%;
+}
+
+.logo-404{
+    margin-top: 0px;
+}
+
+.content-404{
+    margin-bottom: 20px;
+}
+
+.login-btn button{
+    float: left;
+}
+
+.login-btn a{
+    float: right;
+    margin-top: 23px!important;
+}
