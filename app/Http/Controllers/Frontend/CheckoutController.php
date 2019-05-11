@@ -48,8 +48,6 @@ class CheckoutController extends Controller
             );
         }
 
-        //Cart::store($request->email);
-
         $order = $this->addToOrdersTables($request, null);
 
         Mail::send(new OrderPlaced($order));
@@ -85,34 +83,34 @@ class CheckoutController extends Controller
         ]);
 
         // Insert into order_product table
-        foreach (Cart::content() as $item) {
+        Cart::content()->each(function($item)use($order){
             OrderProduct::create([
                 'order_id' => $order->id,
                 'product_id' => $item->model->id,
                 'quantity' => $item->qty,
             ]);
-        }
+        });
 
         return $order;
     }
 
     protected function decreaseQuantities()
-    {
-        foreach (Cart::content() as $item) {
+    {   
+        Cart::content()->each(function($item){
             $product = Product::find($item->model->id);
 
             $product->update(['quantity' => $product->quantity - $item->qty]);
-        }
+        });
     }
 
     protected function productsAreNoLongerAvailable()
-    {
-        foreach (Cart::content() as $item) {
+    {   
+        Cart::content()->each(function($item){
             $product = Product::find($item->model->id);
             if ($product->quantity < $item->qty) {
                 return true;
             }
-        }
+        });
 
         return false;
     }

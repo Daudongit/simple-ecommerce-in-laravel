@@ -1,5 +1,5 @@
 @extends('layout')
-@section('title','Login Page')
+@section('title','Thank you')
 @section('content')
     <section id="form"><!--form-->
         <div class="container">
