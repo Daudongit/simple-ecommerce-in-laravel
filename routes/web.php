@@ -49,8 +49,4 @@ Route::post('/contact', 'Frontend\ContactController@store')->name('contact.store
 
 Route::get('/thankyou', 'Frontend\ConfirmationController@index')->name('confirmation.index');
 
-Route::group(['prefix' => 'admin'], function () {
-    Voyager::routes();
-});
-
 Auth::routes();

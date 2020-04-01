@@ -20,11 +20,11 @@ class DatabaseSeeder extends Seeder
         $this->call(OrdersTableSeeder::class);
         $this->call(DBSeederTable::class);
 
-         $class = 'VoyagerDatabaseSeeder';
-         if (!class_exists($class)) {
-             require_once $this->seedersPath.$class.'.php';
-         }
+        //  $class = 'VoyagerDatabaseSeeder';
+        //  if (!class_exists($class)) {
+        //      require_once $this->seedersPath.$class.'.php';
+        //  }
  
-          with(new $class())->run();
+        //   with(new $class())->run();
     }
 }
